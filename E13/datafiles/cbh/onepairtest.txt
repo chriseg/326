@@ -1,0 +1,2 @@
+# ONEPAIR(6D, 6H, 9D, KH, AS)
+6h 6d 8d 9d kh 1s 2c

@@ -1,0 +1,2 @@
+# FLUSH(6D, 9D, 10D, KD, AD)
+1s 2s 3s 1d 10d 10s 11s 12s 13d 9d 3d 6d

@@ -1,0 +1,5 @@
+# TWOPAIR(2S, KD, KS, AD, AS)
+ad as ks kd 2s
+ac ah kh kc 2d
+qh 12s 4d 6h 4c
+6s 4s 12c 12d 4h

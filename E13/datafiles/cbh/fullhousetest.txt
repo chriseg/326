@@ -1,0 +1,2 @@
+# FULLHOUSE(6D, 6H, 6S, 9C, 9D)
+6h 6s 6d 2s 3h 9d 9c ks 1s 12c

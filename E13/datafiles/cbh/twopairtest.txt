@@ -1,0 +1,2 @@
+# TWOPAIR(3D, 3S, KH, AC, AS)
+2h 3d 3s 1s ac 2d kh

@@ -1,0 +1,71 @@
+package poke;
+
+import java.util.*;
+
+public class WinningHand {
+
+    private static HashSet<Card> dealtcards = new HashSet<Card>();
+    private static Hand[] hands;
+    
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int read_i = 0;
+        ArrayList<Hand> inhands = new ArrayList<Hand>();
+        ArrayList<String> input = new ArrayList<String>();
+
+        while(in.hasNextLine()) {
+            String line = in.nextLine();
+            if(line.length() == 0) { break; }
+            if(line.charAt(0) != '#') {
+                try {
+                    Hand hand = new Hand(line);
+
+                    // this isn't strictly necessary as the etude currently
+                    // stands...
+                    boolean add = true;
+                    Card[] cards = hand.getCards();
+                    line = "";
+                    for(int j = 0; j < 5; ++j) {
+                        for(Card d : dealtcards) {
+                            if(cards[j].compareTo(d) == 0) {
+                                add = false;
+                                line = "Cheater: ";
+                                break;
+                            }
+                        }
+                    }
+                    
+                    line = line + hand;
+                    if(add) { 
+                        for(Card c : hand.getCards()) {
+                            dealtcards.add(c);
+                        }
+                        inhands.add(hand);
+                    }
+                } catch(IllegalArgumentException e) {
+                    //System.err.println(e);
+                    line = "Invalid: " + line;
+                }
+                input.add(line);
+            }
+        }
+
+        for(String s : input) {
+            System.out.println(s);
+        }
+
+        System.out.println();
+
+        hands = new Hand[inhands.size()];
+        inhands.toArray(hands);
+        hands = Hand.sortHands(hands);
+
+        // Although we only need to determine the winning hand - not rank all of
+        // the input.
+        int index = 1;
+        for(Hand hand : hands) {
+            System.out.println(index + ": " + hand);
+            ++index;
+        }
+    }
+}
